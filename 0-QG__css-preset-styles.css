@@ -1,9 +1,4 @@
 /* ---------------PRESET STYLES------------- */
-
-/* html {
-	color-scheme: light dark;
-} */
-
 *,
 *::before,
 *::after {
@@ -11,11 +6,6 @@
 	padding: 0;
 	margin: 0;
 	-webkit-tap-highlight-color: transparent;
-
-	/* font: inherit; */
-	/* list-style: none; */
-	/* list-style-type: none; */
-	/* text-decoration: none; */
 }
 
 html {
@@ -23,21 +13,13 @@ html {
 
 	box-sizing: inherit;
 	scroll-behavior: smooth;
-
-	/* font-size: 100%; */
 }
 
 body {
 	height: 100%;
+	-webkit-font-smoothing: antialiased;
 
 	background-color: var(--clr-gen-website-bckgrd);
-
-	/* font-family: var(--ff-primary); */
-	/* font-size: clamp(1rem, 2vw, 1.125rem); */
-	/* font-weight: var(--fw-regular); */
-	/* line-height: var(--lh-100); */
-	/* height: -webkit-fill-available; */
-	/* color: var(--clr-neutral-black); */
 }
 
 header,
@@ -49,12 +31,45 @@ main {
 }
 
 img,
-svg,
-video {
+picture,
+video,
+canvas,
+svg {
 	display: block;
 	max-width: 100%;
 	height: auto;
 	object-fit: cover;
+}
+
+/*
+	Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/*
+  Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/*
+  Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
 }
 
 /* ---------------GENERAL STYLES------------- */
@@ -62,7 +77,8 @@ video {
 .gen-container {
 	/* outline: 2px solid gold; */
 
-	min-width: var(--min-width__235px);
+	min-width: 250px;
+	margin: 0 auto;
 }
 
 /* ---------------**************------------- */
